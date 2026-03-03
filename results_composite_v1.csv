@@ -1,0 +1,7 @@
+scenario_name,success,steps_total,domains_used,avg_latency,extracts_used,final_url,stop_reason
+Wiki→Google: Turing Birth Year,True,3,wikipedia → google,5.93,1,https://www.google.com/search?q=major+events+in+1912&sca_esv=772deb1fece348b0&so,"All 2 steps completed, final KW matched"
+Wiki→Google: Python Creator,True,3,wikipedia → google,5.3,1,https://www.google.com/search?q=Guido+van+Rossum+programming+language+creator&sc,"All 2 steps completed, final KW matched"
+Google→YouTube: Machine Learning,True,2,google → youtube,5.11,0,https://www.youtube.com/results?search_query=machine+learning+tutorial+for+begin,Final KW 'results?search_query=' in URL at step 2
+Google→YouTube: Deep Learning,True,2,google → youtube,4.95,0,https://www.youtube.com/results?search_query=deep+learning+explained+simply,Final KW 'results?search_query=' in URL at step 2
+Store→Wiki: Notebook Then Research,True,9,store → wikipedia,4.9,0,https://en.wikipedia.org/wiki/Notebook,Final KW '/wiki/Notebook' in URL at step 2
+Booking→Wiki: Hotel Then Research,True,11,booking → wikipedia,5.16,0,https://en.wikipedia.org/wiki/Hotel,Final KW '/wiki/Hotel' in URL at step 2

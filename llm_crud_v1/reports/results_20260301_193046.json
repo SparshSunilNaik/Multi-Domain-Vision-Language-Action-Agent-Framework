@@ -1,0 +1,37 @@
+{
+  "forum": {
+    "domain": "forum",
+    "results": [
+      {
+        "op": "LOGIN",
+        "success": true,
+        "reason": "Logged in as MarvelsGrantMan136",
+        "steps": 1,
+        "latency": 6.62
+      },
+      {
+        "op": "CREATE",
+        "success": true,
+        "reason": "Created: http://localhost:9999/f/AskReddit/7/vla-llm-crud-2",
+        "steps": 7,
+        "latency": 40.71
+      },
+      {
+        "op": "EDIT",
+        "success": false,
+        "reason": "max steps",
+        "steps": 25,
+        "latency": 204.67
+      },
+      {
+        "op": "REPLY",
+        "success": true,
+        "reason": "Reply marker visible",
+        "steps": 13,
+        "latency": 106.6
+      }
+    ],
+    "total_success": 3,
+    "total_ops": 4
+  }
+}

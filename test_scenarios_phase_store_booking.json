@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Store — Single Item Purchase",
+    "instruction": "Purchase the Notebook and complete checkout with name Alice Smith and email alice@test.com and address 123 Main Street.",
+    "start_url": "http://localhost:8001/index.html",
+    "completion_keyword": "VLA_ORDER_SUCCESS",
+    "max_steps": 25
+  },
+  {
+    "name": "Store — Multi Item Purchase",
+    "instruction": "Add Notebook and Desk Lamp to cart and complete checkout with name John Doe and email john@example.com and address 45 Park Avenue.",
+    "start_url": "http://localhost:8001/index.html",
+    "completion_keyword": "VLA_ORDER_SUCCESS",
+    "max_steps": 30
+  },
+  {
+    "name": "Booking — Hotel Reservation",
+    "instruction": "Book a Hotel for tomorrow under the name Bob Lee with email bob@test.com.",
+    "start_url": "http://localhost:8002/step1_service.html",
+    "completion_keyword": "VLA_BOOKING_SUCCESS",
+    "max_steps": 30
+  },
+  {
+    "name": "Booking — Doctor Appointment",
+    "instruction": "Schedule a Doctor Appointment for next Monday under the name Clara White with email clara@test.com.",
+    "start_url": "http://localhost:8002/step1_service.html",
+    "completion_keyword": "VLA_BOOKING_SUCCESS",
+    "max_steps": 30
+  }
+]

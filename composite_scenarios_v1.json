@@ -1,0 +1,140 @@
+[
+    {
+        "name": "Wiki→Google: Turing Birth Year",
+        "composite_instruction": "Find Alan Turing's birth year on Wikipedia, then search Google for major events in that year.",
+        "final_completion_keyword": "search?q=",
+        "steps": [
+            {
+                "domain": "wikipedia",
+                "start_url": "https://en.wikipedia.org",
+                "instruction": "Search for Alan Turing on Wikipedia and navigate to his article.",
+                "completion_keyword": "/wiki/Alan_Turing",
+                "max_steps": 10,
+                "extract": {
+                    "name": "birth_year",
+                    "method": "regex",
+                    "pattern": "(\\d{4})\\s*[–\\-]",
+                    "default": "1912"
+                }
+            },
+            {
+                "domain": "google",
+                "start_url": "https://www.google.com",
+                "instruction": "Search Google for 'major events in {{birth_year}}'.",
+                "completion_keyword": "search?q=",
+                "max_steps": 8
+            }
+        ]
+    },
+    {
+        "name": "Wiki→Google: Python Creator",
+        "composite_instruction": "Find who created Python on Wikipedia, then search Google for that person.",
+        "final_completion_keyword": "search?q=",
+        "steps": [
+            {
+                "domain": "wikipedia",
+                "start_url": "https://en.wikipedia.org",
+                "instruction": "Search for Python programming language on Wikipedia.",
+                "completion_keyword": "/wiki/Python",
+                "max_steps": 10,
+                "extract": {
+                    "name": "creator",
+                    "method": "llm",
+                    "prompt": "From the text, extract ONLY the full name of the person who created or designed Python. Reply with just the name.",
+                    "default": "Guido van Rossum"
+                }
+            },
+            {
+                "domain": "google",
+                "start_url": "https://www.google.com",
+                "instruction": "Search Google for '{{creator}} programming language creator'.",
+                "completion_keyword": "search?q=",
+                "max_steps": 8
+            }
+        ]
+    },
+    {
+        "name": "Google→YouTube: Machine Learning",
+        "composite_instruction": "Search Google for machine learning basics, then find a tutorial video on YouTube.",
+        "final_completion_keyword": "results?search_query=",
+        "steps": [
+            {
+                "domain": "google",
+                "start_url": "https://www.google.com",
+                "instruction": "Search Google for 'machine learning basics'.",
+                "completion_keyword": "search?q=",
+                "max_steps": 8
+            },
+            {
+                "domain": "youtube",
+                "start_url": "https://www.youtube.com",
+                "instruction": "Search YouTube for 'machine learning tutorial for beginners'.",
+                "completion_keyword": "results?search_query=",
+                "max_steps": 8
+            }
+        ]
+    },
+    {
+        "name": "Google→YouTube: Deep Learning",
+        "composite_instruction": "Search Google for deep learning concepts, then find an explainer video on YouTube.",
+        "final_completion_keyword": "results?search_query=",
+        "steps": [
+            {
+                "domain": "google",
+                "start_url": "https://www.google.com",
+                "instruction": "Search Google for 'deep learning neural networks'.",
+                "completion_keyword": "search?q=",
+                "max_steps": 8
+            },
+            {
+                "domain": "youtube",
+                "start_url": "https://www.youtube.com",
+                "instruction": "Search YouTube for 'deep learning explained simply'.",
+                "completion_keyword": "results?search_query=",
+                "max_steps": 8
+            }
+        ]
+    },
+    {
+        "name": "Store→Wiki: Notebook Then Research",
+        "composite_instruction": "Purchase a Notebook from the store, then look up the Notebook article on Wikipedia.",
+        "final_completion_keyword": "/wiki/Notebook",
+        "steps": [
+            {
+                "domain": "store",
+                "start_url": "http://localhost:8001/index.html",
+                "instruction": "Purchase the Notebook and complete checkout with name Alice Smith and email alice@test.com and address 123 Main Street.",
+                "completion_keyword": "VLA_ORDER_SUCCESS",
+                "max_steps": 20
+            },
+            {
+                "domain": "wikipedia",
+                "start_url": "https://en.wikipedia.org",
+                "instruction": "Search Wikipedia for 'notebook'.",
+                "completion_keyword": "/wiki/Notebook",
+                "max_steps": 10
+            }
+        ]
+    },
+    {
+        "name": "Booking→Wiki: Hotel Then Research",
+        "composite_instruction": "Book a Hotel reservation, then look up the Hotel article on Wikipedia.",
+        "final_completion_keyword": "/wiki/Hotel",
+        "steps": [
+            {
+                "domain": "booking",
+                "start_url": "http://localhost:8002/step1_service.html",
+                "instruction": "Book a Hotel for tomorrow under the name Eve Park with email eve@test.com.",
+                "completion_keyword": "VLA_BOOKING_SUCCESS",
+                "max_steps": 20
+            },
+            {
+                "domain": "wikipedia",
+                "start_url": "https://en.wikipedia.org",
+                "instruction": "Search Wikipedia for 'hotel'.",
+                "completion_keyword": "/wiki/Hotel",
+                "max_steps": 10
+            }
+        ]
+    }
+]

@@ -1,0 +1,312 @@
+{
+  "timestamp": "2026-03-01T14:38:54.319606",
+  "run_dir": "/Users/sparshsunilnaik/Documents/safe-webarena-agent/runs/20260301_143408",
+  "total_time_seconds": 286.3,
+  "results": [
+    {
+      "name": "Wikipedia \u2014 Alan Turing",
+      "domain": "wikipedia",
+      "success": true,
+      "steps": 3,
+      "reason": "Keyword '/wiki/Alan_Turing' in URL",
+      "final_url": "https://en.wikipedia.org/wiki/Alan_Turing",
+      "adherence": 0.21,
+      "types": 3,
+      "clicks": 0,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 5.71,
+      "avg_adh": 0.21,
+      "loop": false,
+      "last3": [
+        {
+          "step": 1,
+          "action": "TYPE (kb-fb) \u2190 \"Alan Turing\"",
+          "plan": "- Locate the search textbox and type \"Alan Turing\"\n- Fill th"
+        },
+        {
+          "step": 2,
+          "action": "TYPE (kb-fb) \u2190 \"Alan Turing\"",
+          "plan": "- Locate the search textbox and type \"Alan Turing\"\n- Fill th"
+        },
+        {
+          "step": 3,
+          "action": "TYPE (kb-fb) \u2190 \"Alan Turing\"",
+          "plan": "- Locate the search textbox and type \"Alan Turing\"\n- Fill th"
+        }
+      ]
+    },
+    {
+      "name": "Wikipedia \u2014 Python Language",
+      "domain": "wikipedia",
+      "success": true,
+      "steps": 2,
+      "reason": "Keyword '/wiki/Python' in URL",
+      "final_url": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+      "adherence": 0.38,
+      "types": 2,
+      "clicks": 0,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 5.03,
+      "avg_adh": 0.38,
+      "loop": false,
+      "last3": [
+        {
+          "step": 1,
+          "action": "TYPE (kb-fb) \u2190 \"Python programming language\"",
+          "plan": "- Locate the search textbox on the Wikipedia homepage.\n- Typ"
+        },
+        {
+          "step": 2,
+          "action": "TYPE (kb-fb) \u2190 \"Python programming language\"",
+          "plan": "- Locate the search textbox on the Wikipedia homepage.\n- Typ"
+        }
+      ]
+    },
+    {
+      "name": "Google \u2014 OpenAI Search",
+      "domain": "google",
+      "success": true,
+      "steps": 1,
+      "reason": "Keyword 'search?q=' in URL",
+      "final_url": "https://www.google.com/search?q=OpenAI&sca_esv=433701c7c1bb71f7&source=hp&ei=PQGkaZyUGtOPseMPyvga&iflsig=AFdpzrgAAAAAaaQPTdfUa_NdkTWmqdm6MmSwWaPEgbJs&ved=0ahUKEwjcpq6frP6SAxXTR2wGHUq8BgAQ4dUDCCg&uact=5&oq=OpenAI&gs_lp=Egdnd3Mtd2l6IgZPcGVuQUkyDhAuGIAEGLEDGNEDGMcBMggQABiABBixAzIIEAAYgAQYsQMyCBAAGIAEGLEDMggQABiABBixAzIIEAAYgAQYsQMyDhAAGIAEGLEDGIMBGIoFMgsQABiABBixAxiDATIIEAAYgAQYsQMyCBAAGIAEGLEDSP4BUI4BWI4BcAF4AJABAJgBYqABYqoBATG4AQPIAQD4AQGYAgKgAmqoAgrCAgoQABgDGOoCGI8BmAMF8QV3FCYsMS7jS5IHAzEuMaAH4gayBwMwLjG4B2TCBwUwLjEuMcgHBYAIAA&sclient=gws-wiz",
+      "adherence": 0.3,
+      "types": 1,
+      "clicks": 0,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 4.89,
+      "avg_adh": 0.3,
+      "loop": false,
+      "last3": [
+        {
+          "step": 1,
+          "action": "TYPE [29] \"Search\" \u2190 \"OpenAI\" \u23ce",
+          "plan": "- Identify the search field to input \"OpenAI\"\n- Type \"OpenAI"
+        }
+      ]
+    },
+    {
+      "name": "Google \u2014 Climate Change Search",
+      "domain": "google",
+      "success": true,
+      "steps": 1,
+      "reason": "Keyword 'search?q=' in URL",
+      "final_url": "https://www.google.com/search?q=climate+change&sca_esv=433701c7c1bb71f7&source=hp&ei=SwGkab_TK4izwcsPwvn6IA&iflsig=AFdpzrgAAAAAaaQPWzyMrZrnFQS_Lwfv8g3Z6XdTSxlu&ved=0ahUKEwj_pJamrP6SAxWIWXADHcK8HgQQ4dUDCCg&uact=5&oq=climate+change&gs_lp=Egdnd3Mtd2l6Ig5jbGltYXRlIGNoYW5nZTIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMggQABiABBixAzIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARI4wFQdVh1cAF4AJABAJgBXKABXKoBATG4AQPIAQD4AQGYAgKgAmGoAgrCAgoQABgDGOoCGI8BwgIKEC4YAxjqAhiPAZgDA_EF2wI7_6K4OTuSBwEyoAeOBrIHATG4B17CBwMwLjLIBwOACAA&sclient=gws-wiz",
+      "adherence": 0.36,
+      "types": 1,
+      "clicks": 0,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 4.86,
+      "avg_adh": 0.36,
+      "loop": false,
+      "last3": [
+        {
+          "step": 1,
+          "action": "TYPE [29] \"Search\" \u2190 \"climate change\" \u23ce",
+          "plan": "- Identify the search field to input \"climate change\"\n- Fill"
+        }
+      ]
+    },
+    {
+      "name": "YouTube \u2014 Neural Networks",
+      "domain": "youtube",
+      "success": true,
+      "steps": 1,
+      "reason": "Keyword 'results?search_query=' in URL",
+      "final_url": "https://www.youtube.com/results?search_query=neural+networks+explained",
+      "adherence": 0.33,
+      "types": 1,
+      "clicks": 0,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 4.03,
+      "avg_adh": 0.33,
+      "loop": false,
+      "last3": [
+        {
+          "step": 1,
+          "action": "TYPE [11] \"Search\" \u2190 \"neural networks explained\" \u23ce",
+          "plan": "- Open the search combobox to input the query.\n- Type \"neura"
+        }
+      ]
+    },
+    {
+      "name": "YouTube \u2014 Python Tutorial",
+      "domain": "youtube",
+      "success": true,
+      "steps": 1,
+      "reason": "Keyword 'results?search_query=' in URL",
+      "final_url": "https://www.youtube.com/results?search_query=python+tutorial+for+beginners",
+      "adherence": 0.36,
+      "types": 1,
+      "clicks": 0,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 3.98,
+      "avg_adh": 0.36,
+      "loop": false,
+      "last3": [
+        {
+          "step": 1,
+          "action": "TYPE [11] \"Search\" \u2190 \"python tutorial for beginners\" \u23ce",
+          "plan": "- Locate the search bar to input the query.\n- Type \"python t"
+        }
+      ]
+    },
+    {
+      "name": "Store \u2014 Notebook Purchase",
+      "domain": "store",
+      "success": true,
+      "steps": 7,
+      "reason": "Keyword 'VLA_ORDER_SUCCESS' in text",
+      "final_url": "http://localhost:8001/confirmation.html",
+      "adherence": 0.27,
+      "types": 3,
+      "clicks": 4,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 3.51,
+      "avg_adh": 0.27,
+      "loop": false,
+      "last3": [
+        {
+          "step": 5,
+          "action": "TYPE [4] \"email\" \u2190 \"alice@test.com\"",
+          "plan": "- Fill in the email field with \"alice@test.com\"\n- Fill in th"
+        },
+        {
+          "step": 6,
+          "action": "TYPE [5] \"address\" \u2190 \"123 Main Street\"",
+          "plan": "- Fill in the address field with \"123 Main Street\"\n- Verify "
+        },
+        {
+          "step": 7,
+          "action": "CLICK [1] \"Submit Order\"",
+          "plan": "- Ensure all form fields are filled\n- Verify information mat"
+        }
+      ]
+    },
+    {
+      "name": "Store \u2014 Desk Lamp Purchase",
+      "domain": "store",
+      "success": true,
+      "steps": 9,
+      "reason": "Keyword 'VLA_ORDER_SUCCESS' in text",
+      "final_url": "http://localhost:8001/confirmation.html",
+      "adherence": 0.27,
+      "types": 5,
+      "clicks": 4,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 3.75,
+      "avg_adh": 0.27,
+      "loop": false,
+      "last3": [
+        {
+          "step": 7,
+          "action": "TYPE [5] \"address\" \u2190 \"55 Oak Lane\"",
+          "plan": "- Fill in the address field with \"55 Oak Lane\"\n- Verify all "
+        },
+        {
+          "step": 8,
+          "action": "TYPE [5] \"address\" \u2190 \"55 Oak Lane\"",
+          "plan": "- Fill in the address field with \"55 Oak Lane\"\n- Verify all "
+        },
+        {
+          "step": 9,
+          "action": "CLICK [1] \"Submit Order\"",
+          "plan": "- Confirm all form fields are filled with the correct inform"
+        }
+      ]
+    },
+    {
+      "name": "Booking \u2014 Hotel Reservation",
+      "domain": "booking",
+      "success": true,
+      "steps": 9,
+      "reason": "Keyword 'VLA_BOOKING_SUCCESS' in text",
+      "final_url": "http://localhost:8002/step4_success.html",
+      "adherence": 0.23,
+      "types": 3,
+      "clicks": 6,
+      "fallbacks": 0,
+      "retries": 2,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 4.5,
+      "avg_adh": 0.23,
+      "loop": false,
+      "last3": [
+        {
+          "step": 7,
+          "action": "TYPE [5] \"email\" \u2190 \"eve@test.com\"",
+          "plan": "- Fill the email field with \"eve@test.com\".\n- Click \"Next St"
+        },
+        {
+          "step": 8,
+          "action": "CLICK [2] \"Next Step\"",
+          "plan": "- Fill the booking_date field with \"2023-10-10\".\n- Fill the "
+        },
+        {
+          "step": 9,
+          "action": "CLICK [2] \"Confirm Booking\"",
+          "plan": "- Confirm that all required fields are filled.\n- Click \"Conf"
+        }
+      ]
+    },
+    {
+      "name": "Booking \u2014 Doctor Appointment",
+      "domain": "booking",
+      "success": true,
+      "steps": 7,
+      "reason": "Keyword 'VLA_BOOKING_SUCCESS' in text",
+      "final_url": "http://localhost:8002/step4_success.html",
+      "adherence": 0.24,
+      "types": 3,
+      "clicks": 4,
+      "fallbacks": 0,
+      "retries": 0,
+      "guards": 0,
+      "groundings": 0,
+      "avg_lat": 4.7,
+      "avg_adh": 0.24,
+      "loop": false,
+      "last3": [
+        {
+          "step": 5,
+          "action": "TYPE [5] \"email\" \u2190 \"dan@test.com\"",
+          "plan": "- Enter the email \"dan@test.com\" in the email field.\n- Click"
+        },
+        {
+          "step": 6,
+          "action": "CLICK [2] \"Next Step\"",
+          "plan": "- Fill the booking date field with \"2023-10-18\"\n- Ensure all"
+        },
+        {
+          "step": 7,
+          "action": "CLICK [2] \"Confirm Booking\"",
+          "plan": "- Verify all form fields are filled\n- Click \"Confirm Booking"
+        }
+      ]
+    }
+  ]
+}

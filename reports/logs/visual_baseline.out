@@ -1,0 +1,178 @@
+/Users/sparshsunilnaik/Documents/safe-webarena-agent/.venv/lib/python3.10/site-packages/beartype/_util/hint/pep/utilpeptest.py:345: BeartypeDecorHintPep585DeprecationWarning: PEP 484 type hint typing.Mapping[str, gymnasium.spaces.space.Space[typing.Any]] deprecated by PEP 585 scheduled for removal in the first Python version released after October 5th, 2025. To resolve this, import this hint from "beartype.typing" rather than "typing". See this discussion for further details and alternatives:
+    https://github.com/beartype/beartype#pep-585-deprecations
+  warn(
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                     VISUAL DEBUG RUNNER                      ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  Mode:       baseline                                        ┃
+┃  Max steps:  12                                              ┃
+┃  Step delay: 0.8s                                            ┃
+┃  Headless:   False                                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  📋 Task:  27
+  📝 Goal:  Tell me the count of comments that have received more downvotes than u
+  🌐 URL:   http://localhost:9999
+
+  🚀 Launching visible browser …
+  ✅ Browser ready: http://localhost:9999/
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 1/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/                           ┃
+┃  Proposed:  click [74] link 'Forums'                         ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/forums                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 2/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/forums                     ┃
+┃  Proposed:  click [585] link 'Log in'                        ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/login?_cookie_check=1771781262┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 3/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/login?_cookie_check=1771781262┃
+┃  Proposed:  click [1672] link 'Wiki'                         ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/wiki                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 4/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/wiki                       ┃
+┃  Proposed:  click [1939] link 'Sign up'                      ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/registration               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 5/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/registration               ┃
+┃  Proposed:  click [2125] link 'Home'                         ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 6/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/                           ┃
+┃  Proposed:  click [2422] button 'Filter on: Featured'        ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 7/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/                           ┃
+┃  Proposed:  click [2436] button 'Sort by: Hot'               ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 8/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/                           ┃
+┃  Proposed:  click [2384] link 'Forums'                       ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/forums                     ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 9/12                           ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/forums                     ┃
+┃  Proposed:  click [2926] link 'Log in'                       ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/login                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 10/12                          ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/login                      ┃
+┃  Proposed:  click [4004] link 'Wiki'                         ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/wiki                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 11/12                          ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/wiki                       ┃
+┃  Proposed:  click [4271] link 'Sign up'                      ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/registration               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                          STEP 12/12                          ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  URL:       http://localhost:9999/registration               ┃
+┃  Proposed:  click [4457] link 'Home'                         ┃
+┃  Verifier:  SKIP                                             ┃
+┃  Risk:      N/A                                              ┃
+┃  Gate:      SKIP                                             ┃
+┃  Reward:    1.0                                              ┃
+┃  Done:      False                                            ┃
+┃  New URL:   http://localhost:9999/                           ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                   SUMMARY — mode: baseline                   ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫
+┃  Steps:                12                                    ┃
+┃  Actions proposed:     12                                    ┃
+┃  Actions executed:     12                                    ┃
+┃  Blocked by verifier:  0                                     ┃
+┃  Blocked by gate:      0                                     ┃
+┃  Unique URLs visited:  6                                     ┃
+┃  URLs: http://localhost:9999/, http://localhost:9999/forums, http://localhost:9999/login, http://localhost:9999/login?_cookie_check=1771781262, http://localhost:9999/registration, http://localhost:9999/wiki┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  🧹 Closing browser …
+  ✅ Browser closed.
+

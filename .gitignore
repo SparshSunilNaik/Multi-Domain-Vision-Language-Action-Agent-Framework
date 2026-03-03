@@ -1,0 +1,31 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# macOS
+.DS_Store
+._*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Run traces and screenshots (large, generated)
+runs/
+interactive_logs/
+
+# Temporary files
+_temp_*.json
+*.tmp
+
+# Ollama config cache
+.ollama/

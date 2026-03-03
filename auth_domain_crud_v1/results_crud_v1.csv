@@ -1,0 +1,3 @@
+domain,create_success,edit_success,reply_or_issue_success,delete_success,total_success,total_ops,steps,avg_latency
+forum,True,True,True,True,5,5,5,8.43
+gitlab,True,True,True,True,5,5,5,17.5

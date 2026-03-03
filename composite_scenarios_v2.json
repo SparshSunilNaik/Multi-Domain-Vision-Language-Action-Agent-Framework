@@ -1,0 +1,111 @@
+[
+    {
+        "name": "Python Creator → Google",
+        "composite_instruction": "Find who created Python and then search that person on Google.",
+        "final_completion_keyword": "search?q=",
+        "steps": [
+            {
+                "domain": "wikipedia",
+                "start_url": "https://en.wikipedia.org",
+                "instruction": "Search for Python (programming language) on Wikipedia.",
+                "completion_keyword": "/wiki/Python",
+                "max_steps": 10,
+                "extract": {
+                    "name": "creator",
+                    "method": "llm",
+                    "prompt": "Who created the Python programming language? Reply with just the full name.",
+                    "default": ""
+                }
+            },
+            {
+                "domain": "google",
+                "start_url": "https://www.google.com",
+                "instruction": "Search for {{creator}} on Google.",
+                "completion_keyword": "search?q=",
+                "max_steps": 10
+            }
+        ]
+    },
+    {
+        "name": "Wikipedia → YouTube",
+        "composite_instruction": "Find what year Alan Turing was born, then search YouTube for 'Alan Turing biography'.",
+        "final_completion_keyword": "results?search_query=",
+        "steps": [
+            {
+                "domain": "wikipedia",
+                "start_url": "https://en.wikipedia.org",
+                "instruction": "Search for Alan Turing on Wikipedia.",
+                "completion_keyword": "/wiki/Alan_Turing",
+                "max_steps": 10,
+                "extract": {
+                    "name": "birth_year",
+                    "method": "llm",
+                    "prompt": "What year was Alan Turing born? Reply with just the 4-digit year.",
+                    "default": ""
+                }
+            },
+            {
+                "domain": "youtube",
+                "start_url": "https://www.youtube.com",
+                "instruction": "Search for 'Alan Turing biography' on YouTube.",
+                "completion_keyword": "results?search_query=",
+                "max_steps": 10
+            }
+        ]
+    },
+    {
+        "name": "Store Purchase",
+        "composite_instruction": "Buy a notebook from the store.",
+        "final_completion_keyword": "",
+        "steps": [
+            {
+                "domain": "store",
+                "start_url": "http://localhost:8001/index.html",
+                "instruction": "Buy one notebook. Use name={{name}}, email={{email}}, phone={{phone}}, address={{address}}, city={{city}}, zip={{zip}}, country={{country}}.",
+                "completion_keyword": "",
+                "max_steps": 20
+            }
+        ]
+    },
+    {
+        "name": "Hotel Booking",
+        "composite_instruction": "Book a hotel reservation for tomorrow.",
+        "final_completion_keyword": "",
+        "steps": [
+            {
+                "domain": "booking",
+                "start_url": "http://localhost:8002/step1_service.html",
+                "instruction": "Book a hotel reservation for tomorrow. Use name={{name}}, email={{email}}, phone={{phone}}.",
+                "completion_keyword": "",
+                "max_steps": 20
+            }
+        ]
+    },
+    {
+        "name": "Wikipedia Fact Chain",
+        "composite_instruction": "Find the inventor of the World Wide Web and search Google for them.",
+        "final_completion_keyword": "search?q=",
+        "steps": [
+            {
+                "domain": "wikipedia",
+                "start_url": "https://en.wikipedia.org",
+                "instruction": "Search for World Wide Web on Wikipedia.",
+                "completion_keyword": "/wiki/World_Wide_Web",
+                "max_steps": 10,
+                "extract": {
+                    "name": "inventor",
+                    "method": "llm",
+                    "prompt": "Who invented the World Wide Web? Reply with just the full name.",
+                    "default": ""
+                }
+            },
+            {
+                "domain": "google",
+                "start_url": "https://www.google.com",
+                "instruction": "Search for {{inventor}} on Google.",
+                "completion_keyword": "search?q=",
+                "max_steps": 10
+            }
+        ]
+    }
+]

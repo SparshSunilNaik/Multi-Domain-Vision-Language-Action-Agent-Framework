@@ -1,0 +1,37 @@
+{
+  "forum": {
+    "domain": "forum",
+    "results": [
+      {
+        "op": "LOGIN",
+        "success": true,
+        "reason": "Logged in as MarvelsGrantMan136",
+        "steps": 1,
+        "latency": 6.74
+      },
+      {
+        "op": "CREATE",
+        "success": false,
+        "reason": "max steps",
+        "steps": 13,
+        "latency": 52.95
+      },
+      {
+        "op": "EDIT",
+        "success": false,
+        "reason": "Skipped",
+        "steps": 0,
+        "latency": 0
+      },
+      {
+        "op": "REPLY",
+        "success": false,
+        "reason": "Skipped",
+        "steps": 0,
+        "latency": 0
+      }
+    ],
+    "total_success": 1,
+    "total_ops": 4
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "timestamp": "2026-03-01T15:04:59.422037",
+  "run_dir": "/Users/sparshsunilnaik/Documents/safe-webarena-agent/runs/20260301_150044",
+  "results": [
+    {
+      "name": "Wiki\u2192Google: Turing Birth Year",
+      "composite_instruction": "Find Alan Turing's birth year on Wikipedia, then search Google for major events in that year.",
+      "success": true,
+      "stop_reason": "All 2 steps completed, final KW matched",
+      "steps_total": 3,
+      "domains_used": [
+        "wikipedia",
+        "google"
+      ],
+      "extracts_used": [
+        {
+          "name": "birth_year",
+          "value": "1912",
+          "step": 1,
+          "method": "regex"
+        }
+      ],
+      "avg_latency": 5.93,
+      "final_url": "https://www.google.com/search?q=major+events+in+1912&sca_esv=772deb1fece348b0&source=hp&ei=Wgekae-7O-PjseMP7K6diAI&iflsig=AFdpzrgAAAAAaaQVaocFc7wvpoSVbwezPlnCzkzH_6cf&ved=0ahUKEwjv0O-Jsv6SAxXjcWwGHWxXByEQ4dUDCCg&uact=5&oq=major+events+in+1912&gs_lp=Egdnd3Mtd2l6IhRtYWpvciBldmVudHMgaW4gMTkxMjIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yCBAAGBYYChgeMgYQABgWGB4yBhAAGBYYHkiAAlCRAViRAXABeACQAQCYAVugAVuqAQExuAEDyAEA-AEBmAICoAJiqAIKwgIKEC4YAxjqAhiPAcICChAAGAMY6gIYjwGYAwXxBQb78icBOU7ykgcBMqAH7AWyBwExuAdcwgcFMC4xLjHIBwWACAA&sclient=gws-wiz",
+      "variables": {
+        "birth_year": "1912"
+      },
+      "step_results": [
+        {
+          "name": "Wiki\u2192Google: Turing Birth Year \u2192 Step 1: wikipedia",
+          "success": true,
+          "steps": 2,
+          "reason": "Keyword '/wiki/Alan_Turing' in URL",
+          "domain": "wikipedia",
+          "adherence": 0.18
+        },
+        {
+          "name": "Wiki\u2192Google: Turing Birth Year \u2192 Step 2: google",
+          "success": true,
+          "steps": 1,
+          "reason": "Keyword 'search?q=' in URL",
+          "domain": "google",
+          "adherence": 0.36
+        }
+      ]
+    },
+    {
+      "name": "Wiki\u2192Google: Python Creator",
+      "composite_instruction": "Find who created Python on Wikipedia, then search Google for that person.",
+      "success": true,
+      "stop_reason": "All 2 steps completed, final KW matched",
+      "steps_total": 3,
+      "domains_used": [
+        "wikipedia",
+        "google"
+      ],
+      "extracts_used": [
+        {
+          "name": "creator",
+          "value": "Guido van Rossum",
+          "step": 1,
+          "method": "llm"
+        }
+      ],
+      "avg_latency": 5.3,
+      "final_url": "https://www.google.com/search?q=Guido+van+Rossum+programming+language+creator&sca_esv=772deb1fece348b0&source=hp&ei=fAekaZuxObOSseMP9POFmQs&iflsig=AFdpzrgAAAAAaaQVjCq7guLam9T3rBdZEKbSM4oTDKdB&ved=0ahUKEwib34iasv6SAxUzSWwGHfR5IbMQ4dUDCCg&uact=5&oq=Guido+van+Rossum+programming+language+creator&gs_lp=Egdnd3Mtd2l6Ii1HdWlkbyB2YW4gUm9zc3VtIHByb2dyYW1taW5nIGxhbmd1YWdlIGNyZWF0b3IyBhAAGBYYHjILEAAYgAQYhgMYigUyBRAAGO8FMgUQABjvBTIFEAAY7wUyBRAAGO8FSOUBUHNYc3ABeACQAQCYAWygAWyqAQMwLjG4AQPIAQD4AQGYAgKgAnGoAgrCAgoQABgDGOoCGI8BmAMD8QW8Qugp9QWvV5IHAzEuMaAH4gSyBwMwLjG4B27CBwMwLjLIBwOACAA&sclient=gws-wiz",
+      "variables": {
+        "creator": "Guido van Rossum"
+      },
+      "step_results": [
+        {
+          "name": "Wiki\u2192Google: Python Creator \u2192 Step 1: wikipedia",
+          "success": true,
+          "steps": 2,
+          "reason": "Keyword '/wiki/Python' in URL",
+          "domain": "wikipedia",
+          "adherence": 0.33
+        },
+        {
+          "name": "Wiki\u2192Google: Python Creator \u2192 Step 2: google",
+          "success": true,
+          "steps": 1,
+          "reason": "Keyword 'search?q=' in URL",
+          "domain": "google",
+          "adherence": 0.11
+        }
+      ]
+    },
+    {
+      "name": "Google\u2192YouTube: Machine Learning",
+      "composite_instruction": "Search Google for machine learning basics, then find a tutorial video on YouTube.",
+      "success": true,
+      "stop_reason": "Final KW 'results?search_query=' in URL at step 2",
+      "steps_total": 2,
+      "domains_used": [
+        "google",
+        "youtube"
+      ],
+      "extracts_used": [],
+      "avg_latency": 5.11,
+      "final_url": "https://www.youtube.com/results?search_query=machine+learning+tutorial+for+beginners",
+      "variables": {},
+      "step_results": [
+        {
+          "name": "Google\u2192YouTube: Machine Learning \u2192 Step 1: google",
+          "success": true,
+          "steps": 1,
+          "reason": "Keyword 'search?q=' in URL",
+          "domain": "google",
+          "adherence": 0.36
+        },
+        {
+          "name": "Google\u2192YouTube: Machine Learning \u2192 Step 2: youtube",
+          "success": true,
+          "steps": 1,
+          "reason": "Keyword 'results?search_query=' in URL",
+          "domain": "youtube",
+          "adherence": 0.38
+        }
+      ]
+    },
+    {
+      "name": "Google\u2192YouTube: Deep Learning",
+      "composite_instruction": "Search Google for deep learning concepts, then find an explainer video on YouTube.",
+      "success": true,
+      "stop_reason": "Final KW 'results?search_query=' in URL at step 2",
+      "steps_total": 2,
+      "domains_used": [
+        "google",
+        "youtube"
+      ],
+      "extracts_used": [],
+      "avg_latency": 4.95,
+      "final_url": "https://www.youtube.com/results?search_query=deep+learning+explained+simply",
+      "variables": {},
+      "step_results": [
+        {
+          "name": "Google\u2192YouTube: Deep Learning \u2192 Step 1: google",
+          "success": true,
+          "steps": 1,
+          "reason": "Keyword 'search?q=' in URL",
+          "domain": "google",
+          "adherence": 0.45
+        },
+        {
+          "name": "Google\u2192YouTube: Deep Learning \u2192 Step 2: youtube",
+          "success": true,
+          "steps": 1,
+          "reason": "Keyword 'results?search_query=' in URL",
+          "domain": "youtube",
+          "adherence": 0.28
+        }
+      ]
+    },
+    {
+      "name": "Store\u2192Wiki: Notebook Then Research",
+      "composite_instruction": "Purchase a Notebook from the store, then look up the Notebook article on Wikipedia.",
+      "success": true,
+      "stop_reason": "Final KW '/wiki/Notebook' in URL at step 2",
+      "steps_total": 9,
+      "domains_used": [
+        "store",
+        "wikipedia"
+      ],
+      "extracts_used": [],
+      "avg_latency": 4.9,
+      "final_url": "https://en.wikipedia.org/wiki/Notebook",
+      "variables": {},
+      "step_results": [
+        {
+          "name": "Store\u2192Wiki: Notebook Then Research \u2192 Step 1: store",
+          "success": true,
+          "steps": 7,
+          "reason": "Keyword 'VLA_ORDER_SUCCESS' in text",
+          "domain": "store",
+          "adherence": 0.27
+        },
+        {
+          "name": "Store\u2192Wiki: Notebook Then Research \u2192 Step 2: wikipedia",
+          "success": true,
+          "steps": 2,
+          "reason": "Keyword '/wiki/Notebook' in URL",
+          "domain": "wikipedia",
+          "adherence": 0.25
+        }
+      ]
+    },
+    {
+      "name": "Booking\u2192Wiki: Hotel Then Research",
+      "composite_instruction": "Book a Hotel reservation, then look up the Hotel article on Wikipedia.",
+      "success": true,
+      "stop_reason": "Final KW '/wiki/Hotel' in URL at step 2",
+      "steps_total": 11,
+      "domains_used": [
+        "booking",
+        "wikipedia"
+      ],
+      "extracts_used": [],
+      "avg_latency": 5.16,
+      "final_url": "https://en.wikipedia.org/wiki/Hotel",
+      "variables": {},
+      "step_results": [
+        {
+          "name": "Booking\u2192Wiki: Hotel Then Research \u2192 Step 1: booking",
+          "success": true,
+          "steps": 9,
+          "reason": "Keyword 'VLA_BOOKING_SUCCESS' in text",
+          "domain": "booking",
+          "adherence": 0.21
+        },
+        {
+          "name": "Booking\u2192Wiki: Hotel Then Research \u2192 Step 2: wikipedia",
+          "success": true,
+          "steps": 2,
+          "reason": "Keyword '/wiki/Hotel' in URL",
+          "domain": "wikipedia",
+          "adherence": 0.25
+        }
+      ]
+    }
+  ]
+}

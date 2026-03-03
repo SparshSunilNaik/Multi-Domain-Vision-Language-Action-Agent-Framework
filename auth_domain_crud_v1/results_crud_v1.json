@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-03-01T18:38:16.909176",
+  "runtime_seconds": 132.1,
+  "results": [
+    {
+      "domain": "forum",
+      "base_url": "http://localhost:9999",
+      "results": [
+        {
+          "operation": "LOGIN",
+          "success": true,
+          "reason": "Logged in as MarvelsGrantMan136",
+          "latency": 7.29
+        },
+        {
+          "operation": "CREATE",
+          "success": true,
+          "reason": "Submission created: AskReddit",
+          "latency": 10.36
+        },
+        {
+          "operation": "EDIT",
+          "success": true,
+          "reason": "Edited body visible in DOM",
+          "latency": 8.76
+        },
+        {
+          "operation": "REPLY",
+          "success": true,
+          "reason": "Reply visible in DOM",
+          "latency": 6.46
+        },
+        {
+          "operation": "DELETE",
+          "success": true,
+          "reason": "Thread no longer visible on front page",
+          "latency": 9.29
+        }
+      ],
+      "create_success": true,
+      "edit_success": true,
+      "reply_or_issue_success": true,
+      "delete_success": true,
+      "total_success": 5,
+      "total_ops": 5,
+      "steps": 5,
+      "avg_latency": 8.43
+    },
+    {
+      "domain": "gitlab",
+      "base_url": "http://localhost:8023",
+      "results": [
+        {
+          "operation": "LOGIN",
+          "success": true,
+          "reason": "Logged in to GitLab",
+          "latency": 7.08
+        },
+        {
+          "operation": "CREATE",
+          "success": true,
+          "reason": "Project created at root/vla-crud-test-project",
+          "latency": 33.35
+        },
+        {
+          "operation": "EDIT",
+          "success": true,
+          "reason": "Updated description visible in DOM",
+          "latency": 10.33
+        },
+        {
+          "operation": "ISSUE",
+          "success": true,
+          "reason": "Issue 'VLA Test Issue' visible in DOM",
+          "latency": 9.0
+        },
+        {
+          "operation": "DELETE",
+          "success": true,
+          "reason": "Delete action executed (may be queued)",
+          "latency": 27.75
+        }
+      ],
+      "create_success": true,
+      "edit_success": true,
+      "reply_or_issue_success": true,
+      "delete_success": true,
+      "total_success": 5,
+      "total_ops": 5,
+      "steps": 5,
+      "avg_latency": 17.5
+    }
+  ]
+}

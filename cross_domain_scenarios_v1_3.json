@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Wikipedia — Alan Turing",
+    "instruction": "Search for Alan Turing on Wikipedia and navigate to his article.",
+    "start_url": "https://en.wikipedia.org",
+    "completion_keyword": "/wiki/Alan_Turing",
+    "max_steps": 12
+  },
+  {
+    "name": "Wikipedia — Python Language",
+    "instruction": "Search for Python programming language on Wikipedia.",
+    "start_url": "https://en.wikipedia.org",
+    "completion_keyword": "/wiki/Python",
+    "max_steps": 12
+  },
+  {
+    "name": "Google — OpenAI Search",
+    "instruction": "Search for OpenAI on Google.",
+    "start_url": "https://www.google.com",
+    "completion_keyword": "search?q=",
+    "max_steps": 10
+  },
+  {
+    "name": "Google — Climate Change Search",
+    "instruction": "Search for climate change on Google.",
+    "start_url": "https://www.google.com",
+    "completion_keyword": "search?q=",
+    "max_steps": 10
+  },
+  {
+    "name": "YouTube — Neural Networks",
+    "instruction": "Search for neural networks explained on YouTube.",
+    "start_url": "https://www.youtube.com",
+    "completion_keyword": "results?search_query=",
+    "max_steps": 12
+  },
+  {
+    "name": "YouTube — Python Tutorial",
+    "instruction": "Search for python tutorial for beginners on YouTube.",
+    "start_url": "https://www.youtube.com",
+    "completion_keyword": "results?search_query=",
+    "max_steps": 12
+  },
+  {
+    "name": "Store — Notebook Purchase",
+    "instruction": "Purchase the Notebook and complete checkout with name Alice Smith and email alice@test.com and address 123 Main Street.",
+    "start_url": "http://localhost:8001/index.html",
+    "completion_keyword": "VLA_ORDER_SUCCESS",
+    "max_steps": 20
+  },
+  {
+    "name": "Store — Desk Lamp Purchase",
+    "instruction": "Add the Desk Lamp to the cart and complete checkout with name Bob Jones and email bob@test.com and address 55 Oak Lane.",
+    "start_url": "http://localhost:8001/index.html",
+    "completion_keyword": "VLA_ORDER_SUCCESS",
+    "max_steps": 20
+  },
+  {
+    "name": "Booking — Hotel Reservation",
+    "instruction": "Book a Hotel for tomorrow under the name Eve Park with email eve@test.com.",
+    "start_url": "http://localhost:8002/step1_service.html",
+    "completion_keyword": "VLA_BOOKING_SUCCESS",
+    "max_steps": 20
+  },
+  {
+    "name": "Booking — Doctor Appointment",
+    "instruction": "Schedule a Doctor Appointment for next Wednesday under the name Dan Kim with email dan@test.com.",
+    "start_url": "http://localhost:8002/step1_service.html",
+    "completion_keyword": "VLA_BOOKING_SUCCESS",
+    "max_steps": 20
+  }
+]

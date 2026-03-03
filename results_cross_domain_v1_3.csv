@@ -1,0 +1,11 @@
+name,domain,success,steps,types,clicks,fallbacks,retries,guards,groundings,avg_latency,adherence,loop,reason
+Wikipedia — Alan Turing,wikipedia,True,3,3,0,0,0,0,0,5.71,0.21,False,Keyword '/wiki/Alan_Turing' in URL
+Wikipedia — Python Language,wikipedia,True,2,2,0,0,0,0,0,5.03,0.38,False,Keyword '/wiki/Python' in URL
+Google — OpenAI Search,google,True,1,1,0,0,0,0,0,4.89,0.3,False,Keyword 'search?q=' in URL
+Google — Climate Change Search,google,True,1,1,0,0,0,0,0,4.86,0.36,False,Keyword 'search?q=' in URL
+YouTube — Neural Networks,youtube,True,1,1,0,0,0,0,0,4.03,0.33,False,Keyword 'results?search_query=' in URL
+YouTube — Python Tutorial,youtube,True,1,1,0,0,0,0,0,3.98,0.36,False,Keyword 'results?search_query=' in URL
+Store — Notebook Purchase,store,True,7,3,4,0,0,0,0,3.51,0.27,False,Keyword 'VLA_ORDER_SUCCESS' in text
+Store — Desk Lamp Purchase,store,True,9,5,4,0,0,0,0,3.75,0.27,False,Keyword 'VLA_ORDER_SUCCESS' in text
+Booking — Hotel Reservation,booking,True,9,3,6,0,2,0,0,4.5,0.23,False,Keyword 'VLA_BOOKING_SUCCESS' in text
+Booking — Doctor Appointment,booking,True,7,3,4,0,0,0,0,4.7,0.24,False,Keyword 'VLA_BOOKING_SUCCESS' in text

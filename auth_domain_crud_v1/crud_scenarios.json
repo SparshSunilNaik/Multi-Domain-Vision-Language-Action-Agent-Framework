@@ -1,0 +1,49 @@
+[
+    {
+        "domain": "forum",
+        "name": "Forum Full CRUD",
+        "base_url": "http://localhost:9999",
+        "operations": [
+            "LOGIN",
+            "CREATE",
+            "EDIT",
+            "REPLY",
+            "DELETE"
+        ],
+        "create_content": {
+            "title": "VLA CRUD Test Thread",
+            "body": "Automated CRUD validation."
+        },
+        "edit_content": {
+            "body": "Edited by VLA CRUD system."
+        },
+        "reply_content": {
+            "body": "Reply from VLA CRUD agent."
+        },
+        "verification": "DOM-based"
+    },
+    {
+        "domain": "gitlab",
+        "name": "GitLab Full CRUD",
+        "base_url": "http://localhost:8023",
+        "operations": [
+            "LOGIN",
+            "CREATE",
+            "EDIT",
+            "ISSUE",
+            "DELETE"
+        ],
+        "create_content": {
+            "name": "vla-crud-test-project",
+            "description": "Automated CRUD validation."
+        },
+        "edit_content": {
+            "description": "Edited by VLA CRUD system."
+        },
+        "issue_content": {
+            "title": "VLA Test Issue",
+            "description": "Issue created by CRUD test."
+        },
+        "verification": "DOM-based"
+    }
+]

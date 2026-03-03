@@ -1,0 +1,37 @@
+{
+  "gitlab": {
+    "domain": "gitlab",
+    "results": [
+      {
+        "op": "LOGIN",
+        "success": true,
+        "reason": "Logged in as root",
+        "steps": 1,
+        "latency": 6.82
+      },
+      {
+        "op": "CREATE",
+        "success": false,
+        "reason": "max steps",
+        "steps": 12,
+        "latency": 54.77
+      },
+      {
+        "op": "EDIT",
+        "success": false,
+        "reason": "Skipped",
+        "steps": 0,
+        "latency": 0
+      },
+      {
+        "op": "ISSUE",
+        "success": false,
+        "reason": "Skipped",
+        "steps": 0,
+        "latency": 0
+      }
+    ],
+    "total_success": 1,
+    "total_ops": 4
+  }
+}
