@@ -42,7 +42,66 @@
 </header>
 
 <main id="main">
-  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-top">
+      <h1 id="hero-title">Instructions in, <span class="tagged" data-tag="1">browser actions</span> out.</h1>
+      <div class="hero-side">
+        <p class="lede">A web agent that reads every page’s interactive elements, plans with a local LLM, and acts through a real browser. It chains tasks across sites, fills forms from memory, checks risky actions before taking them, and asks a person when it gets stuck.</p>
+        <p class="stack">Ollama <span>qwen3:8b</span> for planning, <span>Playwright</span> for the browser, plain Python in between.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="stage" id="stage">
+        <div class="stage-bar">
+          <div class="scenarios" role="group" aria-label="Choose a scenario">
+            <button type="button" class="chip" data-scenario="store" aria-pressed="true">Buy one notebook</button>
+            <button type="button" class="chip" data-scenario="chain" aria-pressed="false">Find Python’s creator, then Google them</button>
+            <button type="button" class="chip" data-scenario="hitl" aria-pressed="false">Search for {{mystery_person}}</button>
+          </div>
+          <div class="stage-controls">
+            <label class="switch"><input type="checkbox" id="xray"><span>Agent’s view</span></label>
+            <button type="button" class="ctl" id="speed" aria-label="Playback speed">1×</button>
+            <button type="button" class="ctl ctl-primary" id="run">Run</button>
+          </div>
+        </div>
+
+        <div class="stage-body">
+          <div class="browser">
+            <div class="chrome">
+              <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="url" aria-label="Address bar">
+                <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path fill="currentColor" d="M4 7V5a4 4 0 1 1 8 0v2h.5A1.5 1.5 0 0 1 14 8.5v5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5v-5A1.5 1.5 0 0 1 3.5 7H4Zm2 0h4V5a2 2 0 1 0-4 0v2Z"/></svg>
+                <span id="url-text">localhost:8001/index.html</span>
+              </div>
+            </div>
+            <div class="viewport" id="viewport">
+              <div class="page" id="page"></div>
+              <div class="xray-layer" id="xray-layer" aria-hidden="true"></div>
+              <svg class="cursor" id="cursor" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 2.5 L19.5 13.2 L12.6 14.4 L9.4 20.8 Z" fill="var(--ink)" stroke="var(--surface)" stroke-width="1.6" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="console" aria-labelledby="console-title">
+            <div class="console-head">
+              <h2 id="console-title">Agent log</h2>
+              <span class="step-count" id="step-count">step 0</span>
+            </div>
+            <ol class="log" id="log" aria-live="polite"></ol>
+            <form class="hitl" id="hitl" hidden>
+              <label for="hitl-input" id="hitl-label">Who is mystery_person?</label>
+              <div class="hitl-row">
+                <input id="hitl-input" name="hitl" type="text" autocomplete="off" spellcheck="false" placeholder="Type a name…">
+                <button type="submit" class="ctl ctl-primary">Send</button>
+              </div>
+              <div class="hitl-suggest" id="hitl-suggest"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <p class="stage-note">A replay of the agent’s loop on simplified pages. Prompts, element tags and action format follow the repository; no model runs in your browser.</p>
+    </div>
+  </section>
   <!-- ROUTER -->
   <!-- LOOP -->
   <!-- SAFETY -->
