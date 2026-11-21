@@ -164,7 +164,59 @@
       </div>
     </div>
   </section>
-  <!-- SAFETY -->
+  <section id="safety" class="band safety" aria-labelledby="safety-title">
+    <div class="wrap">
+      <div class="intro intro-wide">
+        <h2 id="safety-title">Three checks before the browser moves</h2>
+        <p>The model proposes; these layers decide. They run after the LLM picks an action and before Playwright executes it, with no training involved. Send actions through and watch where they stop.</p>
+      </div>
+
+      <div class="pipe" id="pipe">
+        <div class="pipe-track" aria-hidden="true"></div>
+        <div class="pipe-stage" data-stage="verifier"><b>Verifier</b><span>Real element? Right role? Not repeating?</span></div>
+        <div class="pipe-stage" data-stage="risk"><b>RiskScorer</b><span>HIGH, MEDIUM or LOW from the label and URL</span></div>
+        <div class="pipe-stage" data-stage="gate"><b>Gate</b><span>Blocks every 2nd HIGH and every 5th MEDIUM</span></div>
+        <div class="pipe-stage pipe-end" data-stage="browser"><b>Browser</b><span>Playwright executes</span></div>
+        <div class="token" id="token" aria-hidden="true"></div>
+      </div>
+
+      <div class="safety-grid">
+        <div class="deck">
+          <h3>Send an action</h3>
+          <div class="deck-list" id="deck"></div>
+          <details class="custom">
+            <summary>Write your own</summary>
+            <form id="custom-form" class="custom-form">
+              <label>Action
+                <select name="type"><option>CLICK</option><option>TYPE</option></select>
+              </label>
+              <label>Element role
+                <select name="role"><option>button</option><option>link</option><option>textbox</option><option>heading</option></select>
+              </label>
+              <label class="wide">Element label <input name="label" type="text" value="Approve merge request" autocomplete="off"></label>
+              <label class="wide">Page URL <input name="url" type="text" value="localhost:8023/root/app/-/merge_requests/1" autocomplete="off" spellcheck="false"></label>
+              <button type="submit" class="ctl ctl-primary">Send through</button>
+            </form>
+          </details>
+        </div>
+        <div class="verdict-card">
+          <div class="verdict-head">
+            <h3>Decision</h3>
+            <button type="button" class="ctl" id="safety-reset">Reset counters</button>
+          </div>
+          <ol class="checks" id="checks" aria-live="polite">
+            <li class="muted">Pick an action to send it through the three checks.</li>
+          </ol>
+          <dl class="counters">
+            <div><dt>HIGH seen</dt><dd id="c-high">0</dd></div>
+            <div><dt>MEDIUM seen</dt><dd id="c-med">0</dd></div>
+            <div><dt>History</dt><dd id="c-hist">0 of 10</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="fine safety-note">Rules from <code>safe_runner.py</code> as documented in <code>reports_llm_v1/04_safety_layers_explained.md</code>. In the 135-run Phase 1 experiment, these layers blocked only a handful of actions; the report is open about keyword blind spots such as “Merge” and “Approve”.</p>
+    </div>
+  </section>
   <!-- RESULTS -->
   <!-- RUN -->
 </main>
@@ -182,5 +234,6 @@
 <script src="js/agent.js"></script>
 <script src="js/router.js"></script>
 <script src="js/loop.js"></script>
+<script src="js/safety.js"></script>
 </body>
 </html>

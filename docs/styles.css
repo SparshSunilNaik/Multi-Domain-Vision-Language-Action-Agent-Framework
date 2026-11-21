@@ -263,12 +263,71 @@ code, pre, kbd { font-family: var(--mono); }
 .stage-panel > p:not(.fine) { margin-top: 10px; color: var(--ink-2); }
 .artifact { margin: 18px 0 12px; background: var(--code-bg); color: var(--code-ink); border-radius: 12px; padding: 16px 18px; font-size: 0.84rem; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
 
+/* ---------- safety ---------- */
+.pipe { position: relative; display: flex; gap: 14px; margin-top: 56px; padding-top: 30px; }
+.pipe-track { position: absolute; left: 4%; right: 4%; top: 30px; height: 0; border-top: 2px dashed var(--rule); transform: translateY(46px); z-index: 0; }
+.pipe-stage { position: relative; z-index: 1; flex: 1; display: grid; gap: 4px; padding: 16px 18px; min-height: 92px; background: var(--surface); border: 1.5px solid var(--rule); border-radius: 14px; transition: border-color 220ms ease, background-color 220ms ease, box-shadow 220ms ease; }
+.pipe-stage b { font-family: var(--display); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; }
+.pipe-stage span { font-size: 0.86rem; color: var(--ink-2); line-height: 1.4; }
+.pipe-stage.active { border-color: var(--ink); box-shadow: 0 0 0 4px var(--surface-2); }
+.pipe-stage.pass { border-color: var(--low); }
+.pipe-stage.block { border-color: var(--high); background: color-mix(in srgb, var(--high) 8%, var(--surface)); animation: shake 380ms ease; }
+@keyframes shake { 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+.pipe-end { border-style: dashed; }
+.token { position: absolute; left: 0; top: 0; z-index: 3; max-width: 240px; padding: 5px 12px; border-radius: 999px; background: var(--ink); color: var(--bg); font: 600 0.76rem var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transition: transform 520ms cubic-bezier(0.3, 0.7, 0.2, 1), opacity 200ms ease, background-color 200ms ease; pointer-events: none; }
+.token.is-on { opacity: 1; }
+.token[data-risk="HIGH"] { background: var(--high); color: #fff; }
+.token[data-risk="MEDIUM"] { background: var(--med); color: #1A1200; }
+.token[data-risk="LOW"] { background: var(--low); color: #fff; }
+.token.is-blocked { animation: drop 600ms ease forwards; }
+@keyframes drop { to { opacity: 0.25; filter: grayscale(1); } }
+.token.is-done { box-shadow: 0 0 0 4px color-mix(in srgb, var(--low) 30%, transparent); }
+
+.safety-grid { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(20px, 3vw, 32px); margin-top: 28px; align-items: start; }
+.deck h3, .verdict-card h3 { font-size: 1rem; font-weight: 600; }
+.deck-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.deck-card { display: grid; gap: 2px; text-align: left; font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--rule); border-radius: 12px; padding: 12px 14px; cursor: pointer; transition: border-color 150ms ease, transform 150ms ease; }
+.deck-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.deck-card:active { transform: translateY(0); }
+.dk-type { font: 600 0.72rem var(--mono); color: var(--accent); }
+.dk-label { font-weight: 600; font-size: 0.95rem; }
+.dk-url { font: 0.74rem var(--mono); color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.custom { margin-top: 12px; border: 1.5px dashed var(--rule); border-radius: 12px; padding: 4px 14px; }
+.custom summary { cursor: pointer; font-weight: 600; font-size: 0.92rem; padding: 8px 0; }
+.custom-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 6px 0 14px; }
+.custom-form label { display: grid; gap: 4px; font-size: 0.8rem; color: var(--ink-2); font-weight: 500; }
+.custom-form .wide { grid-column: 1 / -1; }
+.custom-form input, .custom-form select { font: 0.9rem var(--sans); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; min-height: 38px; }
+.custom-form button { justify-self: start; }
+
+.verdict-card { background: var(--code-bg); color: var(--code-ink); border-radius: 16px; padding: 18px 20px; }
+.verdict-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.verdict-card h3 { color: var(--code-ink); }
+.verdict-card .ctl { background: transparent; color: var(--code-ink); border-color: rgba(255, 255, 255, 0.2); }
+.checks { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; min-height: 170px; font-size: 0.88rem; }
+.checks li { animation: line-in 240ms ease both; line-height: 1.45; }
+.checks code { font-size: 0.8rem; color: #FFFFFF; }
+.checks .muted { color: var(--code-dim); }
+.checks .pass b { color: #4ADE80; }
+.checks .block b { color: #FB923C; }
+.checks .block { color: #FED7AA; }
+.checks .done b { color: #4ADE80; }
+.checks .note { color: var(--code-dim); font-style: italic; }
+.lvl { font: 600 0.72rem var(--mono); padding: 1px 7px; border-radius: 999px; margin: 0 4px; }
+.risk-high .lvl { background: #FB923C; color: #1A0A00; }
+.risk-medium .lvl { background: #FBBF24; color: #1A1200; }
+.risk-low .lvl { background: #4ADE80; color: #04210F; }
+.counters { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 16px 0 0; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+.counters dt { font-size: 0.74rem; color: var(--code-dim); }
+.counters dd { margin: 2px 0 0; font: 600 1rem var(--mono); }
+.safety-note { margin-top: 18px; max-width: 70ch; }
+
 /* ---------- footer ---------- */
 .foot { border-top: 1px solid var(--rule); padding: 28px 0 44px; font-size: 0.92rem; color: var(--ink-2); }
 .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 
 @media (max-width: 980px) {
-  .hero-top, .two-col, .loop-grid { grid-template-columns: 1fr; }
+  .hero-top, .two-col, .loop-grid, .safety-grid { grid-template-columns: 1fr; }
   .stage-body { grid-template-columns: 1fr; }
   .browser { border-right: 0; border-bottom: 1px solid var(--rule); min-height: 440px; }
   .log { max-height: 320px; min-height: 220px; }
