@@ -30,4 +30,37 @@ window.VLAScenarios = {
       await A.verify("'VLA_ORDER_SUCCESS' found in page text");
     },
   },
+
+  chain: {
+    firstPage: { name: "wiki_home" },
+    async run(A) {
+      await A.instr("Find who created Python and search that person on Google.");
+      A.log("sys", "route: composite orchestrator, decomposing with the LLM");
+      await A.sleep(400);
+      A.log("plan", "1. wikipedia: open Python, extract {{creator}}");
+      await A.sleep(250);
+      A.log("plan", "2. google: search {{creator}}");
+      await A.sleep(400);
+
+      await A.open("wiki_home");
+      await A.extract();
+      await A.plan(["Search for the Python programming language", "Open its article"]);
+      await A.type("w-search", "Python programming language");
+      await A.click("w-go");
+
+      await A.open("wiki_article");
+      await A.verify("'/wiki/Python' in URL");
+      const creator = await A.extractVar("infobox-designer", "creator", "name");
+
+      await A.open("google_home");
+      A.log("var", `substitute {{creator}} → "${creator}"`);
+      await A.extract();
+      await A.plan([`Search for ${creator}`]);
+      await A.type("g-search", creator);
+      await A.click("g-go");
+
+      await A.open("google_results", { q: creator, url: `www.google.com/search?q=${creator.replace(/ /g, "+")}` });
+      await A.verify("'search?q=' in URL, chain complete");
+    },
+  },
 };

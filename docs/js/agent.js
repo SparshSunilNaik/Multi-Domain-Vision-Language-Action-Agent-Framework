@@ -152,6 +152,19 @@
       await sleep(300);
     },
     async warn(text) { log("warn", text); await sleep(400); },
+    /* Pull a value off the page into a {{variable}} and validate it, like the
+       composite orchestrator's extraction verifier (year / name / URL patterns). */
+    async extractVar(key, name, kind) {
+      const el = byKey(key);
+      moveCursorTo(el);
+      await sleep(600);
+      el.classList.add("is-extracted");
+      log("var", `EXTRACT {{${name}}} = "${el.textContent.trim()}"`);
+      await sleep(450);
+      log("ok", `  validate ${kind} pattern ✓`);
+      await sleep(500);
+      return el.textContent.trim();
+    },
     setUrl(u) { urlEl.textContent = u; },
     sleep,
   };
