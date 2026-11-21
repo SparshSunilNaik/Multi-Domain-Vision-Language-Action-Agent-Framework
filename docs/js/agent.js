@@ -165,6 +165,34 @@
       await sleep(500);
       return el.textContent.trim();
     },
+    /* Human in the loop: pause until the visitor answers in the console. */
+    hitl(question, suggestions = []) {
+      const token = state.token;
+      const form = $("hitl"), input = $("hitl-input"), sug = $("hitl-suggest");
+      $("hitl-label").textContent = question;
+      sug.innerHTML = suggestions.map((s) => `<button type="button" data-v="${escapeHTML(s)}">${escapeHTML(s)}</button>`).join("");
+      input.value = "";
+      form.hidden = false;
+      runBtn.textContent = "Waiting…";
+      setTimeout(() => input.focus({ preventScroll: true }), 50);
+      return new Promise((resolve, reject) => {
+        const finish = (val) => {
+          const v = val.trim().slice(0, 40);
+          if (!v) { input.focus(); return; }
+          cleanup();
+          form.hidden = true;
+          runBtn.textContent = "Stop";
+          log("hitl", `  human: "${v}"`);
+          resolve(v);
+        };
+        const onSubmit = (e) => { e.preventDefault(); finish(input.value); };
+        const onPick = (e) => { const b = e.target.closest("button[data-v]"); if (b) finish(b.dataset.v); };
+        const poll = setInterval(() => { if (token !== state.token) { cleanup(); form.hidden = true; reject(new Cancelled()); } }, 200);
+        function cleanup() { form.removeEventListener("submit", onSubmit); sug.removeEventListener("click", onPick); clearInterval(poll); }
+        form.addEventListener("submit", onSubmit);
+        sug.addEventListener("click", onPick);
+      });
+    },
     setUrl(u) { urlEl.textContent = u; },
     sleep,
   };

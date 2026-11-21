@@ -63,4 +63,28 @@ window.VLAScenarios = {
       await A.verify("'search?q=' in URL, chain complete");
     },
   },
+
+  hitl: {
+    firstPage: { name: "google_home" },
+    async run(A) {
+      await A.instr("Search for {{mystery_person}} on Google.");
+      A.log("sys", "route: composite orchestrator v3");
+      await A.sleep(400);
+      A.log("var", "substitute variables and memory: {{mystery_person}} not found");
+      await A.sleep(500);
+      A.log("hitl", "HITL: missing variable, asking a human");
+      const who = await A.hitl("Who is mystery_person?", ["Ada Lovelace", "Grace Hopper", "Alan Turing"]);
+      A.log("var", `substitute {{mystery_person}} → "${who}"`);
+      await A.sleep(400);
+
+      await A.open("google_home");
+      await A.extract();
+      await A.plan([`Search for ${who}`]);
+      await A.type("g-search", who);
+      await A.click("g-go");
+
+      await A.open("google_results", { q: who, url: `www.google.com/search?q=${encodeURIComponent(who).replace(/%20/g, "+")}` });
+      await A.verify("'search?q=' in URL");
+    },
+  },
 };
