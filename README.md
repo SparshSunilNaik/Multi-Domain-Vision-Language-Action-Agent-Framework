@@ -2,6 +2,8 @@
 
 A multi-domain, LLM-driven web automation framework that converts natural language instructions into executable browser actions. Built on Playwright for browser control and Ollama (qwen3:8b) for on-device LLM inference, the system supports authenticated CRUD operations, cross-domain task chaining, memory persistence, and Human-in-the-Loop (HITL) escalation.
 
+**Project page:** [sparshsunilnaik.github.io/Multi-Domain-Vision-Language-Action-Agent-Framework](https://sparshsunilnaik.github.io/Multi-Domain-Vision-Language-Action-Agent-Framework/), with an interactive replay of the agent loop, the router and safety rules running live, and results from the evaluation reports. The site lives in `docs/`.
+
 ---
 
 ## Architecture Overview
