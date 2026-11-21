@@ -395,11 +395,19 @@ code, pre, kbd { font-family: var(--mono); }
 
 @media (max-width: 980px) {
   .hero-top, .two-col, .loop-grid, .safety-grid { grid-template-columns: 1fr; }
+  .verdict-card { order: -1; }
   .stage-body { grid-template-columns: 1fr; }
   .browser { border-right: 0; border-bottom: 1px solid var(--rule); min-height: 440px; }
   .log { max-height: 320px; min-height: 220px; }
 }
 @media (max-width: 760px) {
+  .pipe { flex-direction: column; gap: 14px; margin-top: 36px; padding-top: 6px; }
+  .pipe-track { display: none; }
+  .pipe-stage { min-height: 0; padding: 12px 14px; }
+  .token { max-width: 70%; }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .deck-list { grid-template-columns: 1fr; }
+  .route-out { grid-template-columns: 1fr 1fr; }
   .nav { display: none; }
   .actions { margin-left: auto; }
 }

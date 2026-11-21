@@ -67,7 +67,7 @@
     const s = stages[i];
     const p = pipe.getBoundingClientRect(), r = s.getBoundingClientRect();
     const vertical = getComputedStyle(pipe).flexDirection === "column";
-    if (vertical) token.style.transform = `translate(${r.left - p.left + 12}px, ${r.top - p.top + r.height / 2 - 16}px)`;
+    if (vertical) token.style.transform = `translate(${Math.max(8, r.right - p.left - token.offsetWidth - 10)}px, ${r.top - p.top - 12}px)`;
     else token.style.transform = `translate(${r.left - p.left + r.width / 2 - token.offsetWidth / 2}px, ${r.top - p.top - 22}px)`;
   }
 
@@ -87,6 +87,12 @@
   async function send(a) {
     if (state.busy) return;
     state.busy = true;
+    // On stacked layouts the pipeline can be off screen; bring it into view first.
+    const pr = pipe.getBoundingClientRect();
+    if (pr.top < 0 || pr.top > window.innerHeight * 0.5) {
+      pipe.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      await sleep(450);
+    }
     checks.textContent = "";
     stages.forEach((s) => s.classList.remove("pass", "block", "active"));
     token.className = "token is-on";
