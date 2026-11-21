@@ -144,7 +144,26 @@
       </div>
     </div>
   </section>
-  <!-- LOOP -->
+  <section id="loop" class="band loop" aria-labelledby="loop-title">
+    <div class="wrap">
+      <div class="intro intro-wide">
+        <h2 id="loop-title">One loop, every step</h2>
+        <p>The unified agent repeats the same five stages until the page shows the goal or it runs out of steps. Pick a stage to see what actually passes through it.</p>
+      </div>
+      <div class="loop-grid">
+        <div class="ring-wrap">
+          <svg class="ring" id="ring" viewBox="0 0 360 360" aria-hidden="true"></svg>
+          <div class="ring-tabs" role="tablist" aria-label="Loop stages" id="ring-tabs"></div>
+        </div>
+        <div class="stage-panel" role="tabpanel" id="stage-panel" aria-labelledby="">
+          <h3 id="sp-title"></h3>
+          <p id="sp-text"></p>
+          <pre class="artifact"><code id="sp-code"></code></pre>
+          <p class="fine" id="sp-source"></p>
+        </div>
+      </div>
+    </div>
+  </section>
   <!-- SAFETY -->
   <!-- RESULTS -->
   <!-- RUN -->
@@ -162,5 +181,6 @@
 <script src="js/scenarios.js"></script>
 <script src="js/agent.js"></script>
 <script src="js/router.js"></script>
+<script src="js/loop.js"></script>
 </body>
 </html>
