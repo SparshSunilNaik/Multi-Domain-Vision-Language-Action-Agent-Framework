@@ -10,7 +10,7 @@
 
   const pageEl = $("page"), viewport = $("viewport"), layer = $("xray-layer");
   const cursor = $("cursor"), logEl = $("log"), urlEl = $("url-text"), stepEl = $("step-count");
-  const runBtn = $("run");
+  const runBtn = $("run-btn");
 
   class Cancelled extends Error {}
 
