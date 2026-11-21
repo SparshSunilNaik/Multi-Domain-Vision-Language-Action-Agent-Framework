@@ -89,7 +89,9 @@
       urlEl.textContent = ctx.url || p.url;
       layer.textContent = "";
       log("nav", `GOTO ${ctx.url || p.url}`);
-      await sleep(650);
+      await sleep(400);
+      if (state.xray) { tagElements(); drawXray(false); }
+      await sleep(250);
     },
     async extract({ show = 4 } = {}) {
       const els = tagElements();
@@ -248,6 +250,23 @@
       document.querySelectorAll(".chip[data-scenario]").forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
       run(chip.dataset.scenario);
     });
+  });
+
+  /* Agent's view: keep the numbered element tags visible, as the LLM sees them. */
+  const xrayBox = $("xray");
+  xrayBox.addEventListener("change", () => {
+    state.xray = xrayBox.checked;
+    if (state.xray) tagElements();
+    drawXray(false);
+  });
+
+  /* Playback speed: 1x, 2x, 0.5x. */
+  const speedBtn = $("speed");
+  const SPEEDS = [1, 2, 0.5];
+  speedBtn.addEventListener("click", () => {
+    state.speed = SPEEDS[(SPEEDS.indexOf(state.speed) + 1) % SPEEDS.length];
+    speedBtn.textContent = state.speed === 0.5 ? "½×" : `${state.speed}×`;
+    speedBtn.setAttribute("aria-label", `Playback speed ${state.speed}x`);
   });
 
   reset("store");
