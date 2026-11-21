@@ -217,7 +217,30 @@
       <p class="fine safety-note">Rules from <code>safe_runner.py</code> as documented in <code>reports_llm_v1/04_safety_layers_explained.md</code>. In the 135-run Phase 1 experiment, these layers blocked only a handful of actions; the report is open about keyword blind spots such as “Merge” and “Approve”.</p>
     </div>
   </section>
-  <!-- RESULTS -->
+  <section id="results" class="band results" aria-labelledby="results-title">
+    <div class="wrap">
+      <div class="results-head">
+        <div class="intro">
+          <h2 id="results-title">What the runs show</h2>
+          <p>Every suite writes its own report. These are the numbers from the repository’s report files, failures included. Pick a tile to see why a run stopped.</p>
+        </div>
+        <div class="suite-tabs" role="tablist" aria-label="Evaluation suite" id="suite-tabs"></div>
+      </div>
+
+      <div class="suite" role="tabpanel" id="suite-panel">
+        <div class="suite-summary">
+          <div class="score">
+            <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="score-track" cx="60" cy="60" r="50"/><circle class="score-arc" id="score-arc" cx="60" cy="60" r="50" transform="rotate(-90 60 60)"/></svg>
+            <div class="score-num"><span id="score-num">0/0</span><small>tasks passed</small></div>
+          </div>
+          <dl class="suite-stats" id="suite-stats"></dl>
+        </div>
+        <ol class="tiles" id="tiles"></ol>
+        <p class="tile-detail" id="tile-detail" aria-live="polite"></p>
+        <p class="fine" id="suite-source"></p>
+      </div>
+    </div>
+  </section>
   <!-- RUN -->
 </main>
 
@@ -235,5 +258,6 @@
 <script src="js/router.js"></script>
 <script src="js/loop.js"></script>
 <script src="js/safety.js"></script>
+<script src="js/results.js"></script>
 </body>
 </html>
