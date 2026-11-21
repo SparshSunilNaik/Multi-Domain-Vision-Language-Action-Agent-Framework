@@ -241,7 +241,53 @@
       </div>
     </div>
   </section>
-  <!-- RUN -->
+  <section id="run" class="band run" aria-labelledby="run-title">
+    <div class="wrap two-col">
+      <div class="intro">
+        <h2 id="run-title">Run it locally</h2>
+        <p>Everything runs on your machine: the model through Ollama, the browser through Playwright. Python 3.10 or newer.</p>
+        <table class="ports">
+          <caption>Services the agent expects</caption>
+          <thead><tr><th scope="col">Port</th><th scope="col">Service</th></tr></thead>
+          <tbody>
+            <tr><td>11434</td><td>Ollama API</td></tr>
+            <tr><td>8001</td><td>Local store test site</td></tr>
+            <tr><td>8002</td><td>Local booking test site</td></tr>
+            <tr><td>9999</td><td>Postmill forum, self-hosted</td></tr>
+            <tr><td>8023</td><td>GitLab, self-hosted</td></tr>
+          </tbody>
+        </table>
+        <p class="fine">Wikipedia, Google and YouTube tasks only need the first one.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Install</h3>
+          <div class="cmd"><pre><code>git clone https://github.com/SparshSunilNaik/Multi-Domain-Vision-Language-Action-Agent-Framework.git
+cd Multi-Domain-Vision-Language-Action-Agent-Framework
+python3 -m venv .venv &amp;&amp; source .venv/bin/activate
+pip install playwright requests
+playwright install chromium</code></pre><button type="button" class="copy" aria-label="Copy install commands">Copy</button></div>
+        </li>
+        <li>
+          <h3>Start the model</h3>
+          <div class="cmd"><pre><code>ollama serve
+ollama pull qwen3:8b</code></pre><button type="button" class="copy" aria-label="Copy Ollama commands">Copy</button></div>
+        </li>
+        <li>
+          <h3>Give it an instruction</h3>
+          <div class="cmd"><pre><code>python interactive_vla_demo.py --interactive</code></pre><button type="button" class="copy" aria-label="Copy interactive demo command">Copy</button></div>
+          <p class="hint">Try “Search for Alan Turing on Wikipedia.” or “Find who created Python and search that person on Google.” Use <code>--full-demo</code> to run every domain in turn.</p>
+        </li>
+        <li>
+          <h3>Run the evaluations</h3>
+          <div class="cmd"><pre><code>python cross_domain_eval_v1_3.py
+python composite_orchestrator_v3.py --full-eval
+python llm_crud_v1/run_llm_crud_suite.py</code></pre><button type="button" class="copy" aria-label="Copy evaluation commands">Copy</button></div>
+          <p class="hint">Each writes a Markdown report and JSON results into its <code>reports_*</code> folder.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
 </main>
 
 <footer class="foot">
@@ -259,5 +305,6 @@
 <script src="js/loop.js"></script>
 <script src="js/safety.js"></script>
 <script src="js/results.js"></script>
+<script src="js/copy.js"></script>
 </body>
 </html>

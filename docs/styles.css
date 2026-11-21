@@ -365,6 +365,24 @@ code, pre, kbd { font-family: var(--mono); }
 .tile-detail.fail b { color: var(--high); }
 .results .fine { margin-top: 8px; }
 
+/* ---------- run ---------- */
+.ports { width: 100%; margin-top: 28px; border-collapse: collapse; font-size: 0.92rem; }
+.ports caption { text-align: left; font-weight: 600; margin-bottom: 8px; }
+.ports th { text-align: left; font-weight: 500; font-size: 0.8rem; color: var(--ink-2); padding: 0 0 6px; border-bottom: 1.5px solid var(--ink); }
+.ports td { padding: 9px 0; border-bottom: 1px solid var(--rule); }
+.ports td:first-child { font-family: var(--mono); width: 6em; font-variant-numeric: tabular-nums; }
+.run .intro .fine { margin-top: 12px; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: grid; gap: 26px; min-width: 0; }
+.steps li { counter-increment: s; min-width: 0; }
+.steps h3 { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 600; }
+.steps h3::before { content: counter(s); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; border: 1.5px dashed var(--accent); color: var(--accent); font: 600 0.82rem var(--mono); flex: none; }
+.cmd { position: relative; margin-top: 10px; }
+.cmd pre { margin: 0; background: var(--code-bg); color: var(--code-ink); padding: 15px 84px 15px 18px; border-radius: 14px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 0.84rem; line-height: 1.7; }
+.copy { position: absolute; top: 10px; right: 10px; font: inherit; font-size: 0.8rem; font-weight: 600; color: var(--code-ink); background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 0 12px; min-height: 30px; cursor: pointer; }
+.copy:hover { background: rgba(255, 255, 255, 0.16); }
+.hint { margin-top: 8px; font-size: 0.9rem; color: var(--ink-2); }
+.hint code { font-size: 0.86em; background: var(--surface-2); padding: 1px 5px; border-radius: 5px; }
+
 /* ---------- footer ---------- */
 .foot { border-top: 1px solid var(--rule); padding: 28px 0 44px; font-size: 0.92rem; color: var(--ink-2); }
 .foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
