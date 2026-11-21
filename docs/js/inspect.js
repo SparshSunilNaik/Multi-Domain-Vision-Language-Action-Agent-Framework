@@ -43,7 +43,11 @@
   }
   function hide() { current = null; box.classList.remove("is-on"); }
 
+  let next = els.length + 1;
   document.addEventListener("pointerover", (e) => {
+    // Elements created after load (result tiles, log controls) get tagged on first hover.
+    const fresh = e.target.closest(SELECTOR);
+    if (fresh && !fresh.hasAttribute("data-vla-id") && !fresh.closest("#viewport")) fresh.setAttribute("data-vla-id", String(next++));
     const el = e.target.closest("[data-vla-id]");
     if (el && !el.closest("#viewport")) show(el); else hide();
   });
