@@ -102,7 +102,48 @@
       <p class="stage-note">A replay of the agent’s loop on simplified pages. Prompts, element tags and action format follow the repository; no model runs in your browser.</p>
     </div>
   </section>
-  <!-- ROUTER -->
+  <section id="router" class="band router" aria-labelledby="router-title">
+    <div class="wrap two-col">
+      <div class="intro">
+        <h2 id="router-title">Every instruction is routed first</h2>
+        <p>Before any model call, a keyword router picks the engine. Edit words get the authenticated CRUD engine, video words get the composite orchestrator, and everything else goes to the unified agent. A second pass picks the starting site.</p>
+        <p class="fine">The same rules as <code>detect_route</code> and <code>detect_start_url</code> in <code>interactive_vla_demo.py</code>, running live in your browser.</p>
+      </div>
+
+      <div class="router-card">
+        <label class="router-label" for="router-input">Try an instruction</label>
+        <input id="router-input" class="router-input" type="text" autocomplete="off" spellcheck="false" value="Create a new post on the forum.">
+        <div class="examples" role="group" aria-label="Example instructions">
+          <button type="button" data-ex="Create a new post on the forum.">Forum post</button>
+          <button type="button" data-ex="Open an issue in the GitLab project.">GitLab issue</button>
+          <button type="button" data-ex="Watch a video about neural networks.">Watch a video</button>
+          <button type="button" data-ex="Book a hotel in Paris for two nights.">Book a hotel</button>
+          <button type="button" data-ex="Search for Alan Turing on Wikipedia.">Wikipedia</button>
+        </div>
+        <p class="tokens" id="router-tokens" aria-hidden="true"></p>
+
+        <ol class="lanes" id="lanes" aria-label="Engines">
+          <li class="lane" data-route="vla_agent">
+            <span class="lane-name">Unified agent</span>
+            <span class="lane-sub">DOM, LLM, action, verify. Up to 20 steps.</span>
+          </li>
+          <li class="lane" data-route="composite">
+            <span class="lane-name">Composite orchestrator</span>
+            <span class="lane-sub">Splits the task across sites, passes variables, asks a human when stuck.</span>
+          </li>
+          <li class="lane" data-route="crud">
+            <span class="lane-name">LLM CRUD engine</span>
+            <span class="lane-sub">Logs in, then creates, edits and replies. <span class="pill" data-sub="crud_forum">Forum</span> <span class="pill" data-sub="crud_gitlab">GitLab</span></span>
+          </li>
+        </ol>
+        <dl class="route-out" aria-live="polite">
+          <div><dt>Route</dt><dd id="route-name">crud_forum</dd></div>
+          <div><dt>Start URL</dt><dd id="route-url">localhost:9999</dd></div>
+          <div><dt>Matched</dt><dd id="route-why">create, post, forum</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
   <!-- LOOP -->
   <!-- SAFETY -->
   <!-- RESULTS -->
@@ -120,5 +161,6 @@
 <script src="js/pages.js"></script>
 <script src="js/scenarios.js"></script>
 <script src="js/agent.js"></script>
+<script src="js/router.js"></script>
 </body>
 </html>
